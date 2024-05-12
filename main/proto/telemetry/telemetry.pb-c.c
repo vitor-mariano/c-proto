@@ -229,7 +229,7 @@ static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[10] =
     offsetof(Telemetry__Record, name),
     NULL,
     &protobuf_c_empty_string,
-    PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -396,7 +396,7 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     offsetof(Telemetry__TelemetryPack, base_name),
     NULL,
     &protobuf_c_empty_string,
-    PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
+    0 | PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
