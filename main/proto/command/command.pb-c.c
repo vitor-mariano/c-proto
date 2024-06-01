@@ -181,21 +181,21 @@ static const ProtobufCFieldDescriptor command__trigger__field_descriptors[4] =
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "measurement",
+    "resource",
     4,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Command__Trigger, measurement),
-    &telemetry__measurement__descriptor,
+    offsetof(Command__Trigger, resource),
+    &telemetry__resource__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
 static const unsigned command__trigger__field_indices_by_name[] = {
-  3,   /* field[3] = measurement */
   2,   /* field[2] = range */
+  3,   /* field[3] = resource */
   0,   /* field[0] = type */
   1,   /* field[1] = value */
 };

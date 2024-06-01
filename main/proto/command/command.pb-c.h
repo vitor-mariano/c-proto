@@ -44,11 +44,11 @@ struct  _Command__Trigger
   double value;
   size_t n_range;
   double *range;
-  Telemetry__Measurement measurement;
+  Telemetry__Resource resource;
 };
 #define COMMAND__TRIGGER__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&command__trigger__descriptor) \
-    , COMMAND__TRIGGER_TYPE__TRIGGER_TYPE_UNSPECIFIED, 0, 0,NULL, TELEMETRY__MEASUREMENT__MEASUREMENT_UNSPECIFIED }
+    , COMMAND__TRIGGER_TYPE__TRIGGER_TYPE_UNSPECIFIED, 0, 0,NULL, TELEMETRY__RESOURCE__RESOURCE_UNSPECIFIED }
 
 
 struct  _Command__Command

@@ -206,16 +206,16 @@ const ProtobufCMessageDescriptor telemetry__sem_ver__descriptor =
   (ProtobufCMessageInit) telemetry__sem_ver__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[10] =
+static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[11] =
 {
   {
-    "measurement",
+    "resources",
     1,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Telemetry__Record, measurement),
-    &telemetry__measurement__descriptor,
+    offsetof(Telemetry__Record, resources),
+    &telemetry__resource__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -229,7 +229,7 @@ static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[10] =
     offsetof(Telemetry__Record, name),
     NULL,
     &protobuf_c_empty_string,
-    0 | PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
+    0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -328,13 +328,26 @@ static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[10] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "int_value",
+    11,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_INT64,
+    0,   /* quantifier_offset */
+    offsetof(Telemetry__Record, int_value),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned telemetry__record__field_indices_by_name[] = {
   9,   /* field[9] = alert_id */
   6,   /* field[6] = bool_value */
   7,   /* field[7] = data_value */
-  0,   /* field[0] = measurement */
+  10,   /* field[10] = int_value */
   1,   /* field[1] = name */
+  0,   /* field[0] = resources */
   8,   /* field[8] = severity */
   5,   /* field[5] = string_value */
   3,   /* field[3] = time */
@@ -344,7 +357,7 @@ static const unsigned telemetry__record__field_indices_by_name[] = {
 static const ProtobufCIntRange telemetry__record__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 10 }
+  { 0, 11 }
 };
 const ProtobufCMessageDescriptor telemetry__record__descriptor =
 {
@@ -354,14 +367,14 @@ const ProtobufCMessageDescriptor telemetry__record__descriptor =
   "Telemetry__Record",
   "telemetry",
   sizeof(Telemetry__Record),
-  10,
+  11,
   telemetry__record__field_descriptors,
   telemetry__record__field_indices_by_name,
   1,  telemetry__record__number_ranges,
   (ProtobufCMessageInit) telemetry__record__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descriptors[8] =
+static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descriptors[7] =
 {
   {
     "records",
@@ -376,13 +389,13 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "base_measurement",
+    "base_resource",
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Telemetry__TelemetryPack, base_measurement),
-    &telemetry__measurement__descriptor,
+    offsetof(Telemetry__TelemetryPack, base_resource),
+    &telemetry__resource__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -396,7 +409,7 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     offsetof(Telemetry__TelemetryPack, base_name),
     NULL,
     &protobuf_c_empty_string,
-    0 | PROTOBUF_C_FIELD_FLAG_DEPRECATED,             /* flags */
+    0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
@@ -447,23 +460,10 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
-  {
-    "base_severity",
-    8,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_ENUM,
-    0,   /* quantifier_offset */
-    offsetof(Telemetry__TelemetryPack, base_severity),
-    &telemetry__severity__descriptor,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
 };
 static const unsigned telemetry__telemetry_pack__field_indices_by_name[] = {
-  1,   /* field[1] = base_measurement */
   2,   /* field[2] = base_name */
-  7,   /* field[7] = base_severity */
+  1,   /* field[1] = base_resource */
   3,   /* field[3] = base_time */
   4,   /* field[4] = base_unit */
   6,   /* field[6] = network_id */
@@ -473,7 +473,7 @@ static const unsigned telemetry__telemetry_pack__field_indices_by_name[] = {
 static const ProtobufCIntRange telemetry__telemetry_pack__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 8 }
+  { 0, 7 }
 };
 const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
 {
@@ -483,154 +483,154 @@ const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
   "Telemetry__TelemetryPack",
   "telemetry",
   sizeof(Telemetry__TelemetryPack),
-  8,
+  7,
   telemetry__telemetry_pack__field_descriptors,
   telemetry__telemetry_pack__field_indices_by_name,
   1,  telemetry__telemetry_pack__number_ranges,
   (ProtobufCMessageInit) telemetry__telemetry_pack__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue telemetry__measurement__enum_values_by_number[59] =
+static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[59] =
 {
-  { "MEASUREMENT_UNSPECIFIED", "TELEMETRY__MEASUREMENT__MEASUREMENT_UNSPECIFIED", 0 },
-  { "MEASUREMENT_TEMPERATURE", "TELEMETRY__MEASUREMENT__MEASUREMENT_TEMPERATURE", 1 },
-  { "MEASUREMENT_HUMIDITY", "TELEMETRY__MEASUREMENT__MEASUREMENT_HUMIDITY", 2 },
-  { "MEASUREMENT_LATITUDE", "TELEMETRY__MEASUREMENT__MEASUREMENT_LATITUDE", 3 },
-  { "MEASUREMENT_LONGITUDE", "TELEMETRY__MEASUREMENT__MEASUREMENT_LONGITUDE", 4 },
-  { "MEASUREMENT_ALTITUDE", "TELEMETRY__MEASUREMENT__MEASUREMENT_ALTITUDE", 5 },
-  { "MEASUREMENT_POWER", "TELEMETRY__MEASUREMENT__MEASUREMENT_POWER", 6 },
-  { "MEASUREMENT_PRESSURE", "TELEMETRY__MEASUREMENT__MEASUREMENT_PRESSURE", 7 },
-  { "MEASUREMENT_ANGLE", "TELEMETRY__MEASUREMENT__MEASUREMENT_ANGLE", 8 },
-  { "MEASUREMENT_LENGTH", "TELEMETRY__MEASUREMENT__MEASUREMENT_LENGTH", 9 },
-  { "MEASUREMENT_BREADTH", "TELEMETRY__MEASUREMENT__MEASUREMENT_BREADTH", 10 },
-  { "MEASUREMENT_HEIGHT", "TELEMETRY__MEASUREMENT__MEASUREMENT_HEIGHT", 11 },
-  { "MEASUREMENT_WEIGHT", "TELEMETRY__MEASUREMENT__MEASUREMENT_WEIGHT", 12 },
-  { "MEASUREMENT_THICKNESS", "TELEMETRY__MEASUREMENT__MEASUREMENT_THICKNESS", 13 },
-  { "MEASUREMENT_DISTANCE", "TELEMETRY__MEASUREMENT__MEASUREMENT_DISTANCE", 14 },
-  { "MEASUREMENT_AREA", "TELEMETRY__MEASUREMENT__MEASUREMENT_AREA", 15 },
-  { "MEASUREMENT_VOLUME", "TELEMETRY__MEASUREMENT__MEASUREMENT_VOLUME", 16 },
-  { "MEASUREMENT_VELOCITY", "TELEMETRY__MEASUREMENT__MEASUREMENT_VELOCITY", 17 },
-  { "MEASUREMENT_ELECTRIC_CURRENT", "TELEMETRY__MEASUREMENT__MEASUREMENT_ELECTRIC_CURRENT", 18 },
-  { "MEASUREMENT_ELECTRIC_POTENTIAL", "TELEMETRY__MEASUREMENT__MEASUREMENT_ELECTRIC_POTENTIAL", 19 },
-  { "MEASUREMENT_ELECTRIC_RESISTANCE", "TELEMETRY__MEASUREMENT__MEASUREMENT_ELECTRIC_RESISTANCE", 20 },
-  { "MEASUREMENT_ILLUMINANCE", "TELEMETRY__MEASUREMENT__MEASUREMENT_ILLUMINANCE", 21 },
-  { "MEASUREMENT_ACCELERATION_X", "TELEMETRY__MEASUREMENT__MEASUREMENT_ACCELERATION_X", 22 },
-  { "MEASUREMENT_ACCELERATION_Y", "TELEMETRY__MEASUREMENT__MEASUREMENT_ACCELERATION_Y", 23 },
-  { "MEASUREMENT_ACCELERATION_Z", "TELEMETRY__MEASUREMENT__MEASUREMENT_ACCELERATION_Z", 24 },
-  { "MEASUREMENT_HEADING", "TELEMETRY__MEASUREMENT__MEASUREMENT_HEADING", 25 },
-  { "MEASUREMENT_CO_CONCENTRATION", "TELEMETRY__MEASUREMENT__MEASUREMENT_CO_CONCENTRATION", 26 },
-  { "MEASUREMENT_CO2_CONCENTRATION", "TELEMETRY__MEASUREMENT__MEASUREMENT_CO2_CONCENTRATION", 27 },
-  { "MEASUREMENT_SOUND", "TELEMETRY__MEASUREMENT__MEASUREMENT_SOUND", 28 },
-  { "MEASUREMENT_FREQUENCY", "TELEMETRY__MEASUREMENT__MEASUREMENT_FREQUENCY", 29 },
-  { "MEASUREMENT_BATTERY_LEVEL", "TELEMETRY__MEASUREMENT__MEASUREMENT_BATTERY_LEVEL", 30 },
-  { "MEASUREMENT_BATTERY_VOLTAGE", "TELEMETRY__MEASUREMENT__MEASUREMENT_BATTERY_VOLTAGE", 31 },
-  { "MEASUREMENT_RADIUS", "TELEMETRY__MEASUREMENT__MEASUREMENT_RADIUS", 32 },
-  { "MEASUREMENT_BATTERY_LEVEL_LOW", "TELEMETRY__MEASUREMENT__MEASUREMENT_BATTERY_LEVEL_LOW", 33 },
-  { "MEASUREMENT_COMPASS_X", "TELEMETRY__MEASUREMENT__MEASUREMENT_COMPASS_X", 34 },
-  { "MEASUREMENT_COMPASS_Y", "TELEMETRY__MEASUREMENT__MEASUREMENT_COMPASS_Y", 35 },
-  { "MEASUREMENT_COMPASS_Z", "TELEMETRY__MEASUREMENT__MEASUREMENT_COMPASS_Z", 36 },
-  { "MEASUREMENT_READ_SWITCH", "TELEMETRY__MEASUREMENT__MEASUREMENT_READ_SWITCH", 37 },
-  { "MEASUREMENT_PRESENCE", "TELEMETRY__MEASUREMENT__MEASUREMENT_PRESENCE", 38 },
-  { "MEASUREMENT_COUNTER", "TELEMETRY__MEASUREMENT__MEASUREMENT_COUNTER", 39 },
-  { "MEASUREMENT_INTERNAL_TEMPERATURE", "TELEMETRY__MEASUREMENT__MEASUREMENT_INTERNAL_TEMPERATURE", 40 },
-  { "MEASUREMENT_MOISTURE", "TELEMETRY__MEASUREMENT__MEASUREMENT_MOISTURE", 41 },
-  { "MEASUREMENT_APPARENT_POWER", "TELEMETRY__MEASUREMENT__MEASUREMENT_APPARENT_POWER", 42 },
-  { "MEASUREMENT_ACCUMULATED_POWER", "TELEMETRY__MEASUREMENT__MEASUREMENT_ACCUMULATED_POWER", 43 },
-  { "MEASUREMENT_REACTIVE_POWER", "TELEMETRY__MEASUREMENT__MEASUREMENT_REACTIVE_POWER", 44 },
-  { "MEASUREMENT_POWER_FACTOR", "TELEMETRY__MEASUREMENT__MEASUREMENT_POWER_FACTOR", 45 },
-  { "MEASUREMENT_LOG", "TELEMETRY__MEASUREMENT__MEASUREMENT_LOG", 46 },
-  { "MEASUREMENT_FREE_HEAP_SIZE", "TELEMETRY__MEASUREMENT__MEASUREMENT_FREE_HEAP_SIZE", 47 },
-  { "MEASUREMENT_LUMINOUS_FLUX", "TELEMETRY__MEASUREMENT__MEASUREMENT_LUMINOUS_FLUX", 48 },
-  { "MEASUREMENT_LUMINOUS_INTENSITY", "TELEMETRY__MEASUREMENT__MEASUREMENT_LUMINOUS_INTENSITY", 49 },
-  { "MEASUREMENT_BRIGHTESS", "TELEMETRY__MEASUREMENT__MEASUREMENT_BRIGHTESS", 50 },
-  { "MEASUREMENT_SWITCH", "TELEMETRY__MEASUREMENT__MEASUREMENT_SWITCH", 51 },
-  { "MEASUREMENT_CONFIG", "TELEMETRY__MEASUREMENT__MEASUREMENT_CONFIG", 52 },
-  { "MEASUREMENT_IRRADIANCE", "TELEMETRY__MEASUREMENT__MEASUREMENT_IRRADIANCE", 53 },
-  { "MEASUREMENT_FIRMWARE_VERSION", "TELEMETRY__MEASUREMENT__MEASUREMENT_FIRMWARE_VERSION", 54 },
-  { "MEASUREMENT_HARDWARE_VERSION", "TELEMETRY__MEASUREMENT__MEASUREMENT_HARDWARE_VERSION", 55 },
-  { "MEASUREMENT_HARDWARE_ID", "TELEMETRY__MEASUREMENT__MEASUREMENT_HARDWARE_ID", 56 },
-  { "MEASUREMENT_MANUFACTURING_DATE", "TELEMETRY__MEASUREMENT__MEASUREMENT_MANUFACTURING_DATE", 57 },
-  { "MEASUREMENT_DEVICE_NAME", "TELEMETRY__MEASUREMENT__MEASUREMENT_DEVICE_NAME", 58 },
+  { "RESOURCE_UNSPECIFIED", "TELEMETRY__RESOURCE__RESOURCE_UNSPECIFIED", 0 },
+  { "RESOURCE_TEMPERATURE", "TELEMETRY__RESOURCE__RESOURCE_TEMPERATURE", 1 },
+  { "RESOURCE_HUMIDITY", "TELEMETRY__RESOURCE__RESOURCE_HUMIDITY", 2 },
+  { "RESOURCE_LATITUDE", "TELEMETRY__RESOURCE__RESOURCE_LATITUDE", 3 },
+  { "RESOURCE_LONGITUDE", "TELEMETRY__RESOURCE__RESOURCE_LONGITUDE", 4 },
+  { "RESOURCE_ALTITUDE", "TELEMETRY__RESOURCE__RESOURCE_ALTITUDE", 5 },
+  { "RESOURCE_POWER", "TELEMETRY__RESOURCE__RESOURCE_POWER", 6 },
+  { "RESOURCE_PRESSURE", "TELEMETRY__RESOURCE__RESOURCE_PRESSURE", 7 },
+  { "RESOURCE_ANGLE", "TELEMETRY__RESOURCE__RESOURCE_ANGLE", 8 },
+  { "RESOURCE_LENGTH", "TELEMETRY__RESOURCE__RESOURCE_LENGTH", 9 },
+  { "RESOURCE_BREADTH", "TELEMETRY__RESOURCE__RESOURCE_BREADTH", 10 },
+  { "RESOURCE_HEIGHT", "TELEMETRY__RESOURCE__RESOURCE_HEIGHT", 11 },
+  { "RESOURCE_WEIGHT", "TELEMETRY__RESOURCE__RESOURCE_WEIGHT", 12 },
+  { "RESOURCE_THICKNESS", "TELEMETRY__RESOURCE__RESOURCE_THICKNESS", 13 },
+  { "RESOURCE_DISTANCE", "TELEMETRY__RESOURCE__RESOURCE_DISTANCE", 14 },
+  { "RESOURCE_AREA", "TELEMETRY__RESOURCE__RESOURCE_AREA", 15 },
+  { "RESOURCE_VOLUME", "TELEMETRY__RESOURCE__RESOURCE_VOLUME", 16 },
+  { "RESOURCE_VELOCITY", "TELEMETRY__RESOURCE__RESOURCE_VELOCITY", 17 },
+  { "RESOURCE_ELECTRIC_CURRENT", "TELEMETRY__RESOURCE__RESOURCE_ELECTRIC_CURRENT", 18 },
+  { "RESOURCE_ELECTRIC_POTENTIAL", "TELEMETRY__RESOURCE__RESOURCE_ELECTRIC_POTENTIAL", 19 },
+  { "RESOURCE_ELECTRIC_RESISTANCE", "TELEMETRY__RESOURCE__RESOURCE_ELECTRIC_RESISTANCE", 20 },
+  { "RESOURCE_ILLUMINANCE", "TELEMETRY__RESOURCE__RESOURCE_ILLUMINANCE", 21 },
+  { "RESOURCE_ACCELERATION_X", "TELEMETRY__RESOURCE__RESOURCE_ACCELERATION_X", 22 },
+  { "RESOURCE_ACCELERATION_Y", "TELEMETRY__RESOURCE__RESOURCE_ACCELERATION_Y", 23 },
+  { "RESOURCE_ACCELERATION_Z", "TELEMETRY__RESOURCE__RESOURCE_ACCELERATION_Z", 24 },
+  { "RESOURCE_HEADING", "TELEMETRY__RESOURCE__RESOURCE_HEADING", 25 },
+  { "RESOURCE_CO_CONCENTRATION", "TELEMETRY__RESOURCE__RESOURCE_CO_CONCENTRATION", 26 },
+  { "RESOURCE_CO2_CONCENTRATION", "TELEMETRY__RESOURCE__RESOURCE_CO2_CONCENTRATION", 27 },
+  { "RESOURCE_SOUND", "TELEMETRY__RESOURCE__RESOURCE_SOUND", 28 },
+  { "RESOURCE_FREQUENCY", "TELEMETRY__RESOURCE__RESOURCE_FREQUENCY", 29 },
+  { "RESOURCE_BATTERY_LEVEL", "TELEMETRY__RESOURCE__RESOURCE_BATTERY_LEVEL", 30 },
+  { "RESOURCE_BATTERY_VOLTAGE", "TELEMETRY__RESOURCE__RESOURCE_BATTERY_VOLTAGE", 31 },
+  { "RESOURCE_RADIUS", "TELEMETRY__RESOURCE__RESOURCE_RADIUS", 32 },
+  { "RESOURCE_BATTERY_LEVEL_LOW", "TELEMETRY__RESOURCE__RESOURCE_BATTERY_LEVEL_LOW", 33 },
+  { "RESOURCE_COMPASS_X", "TELEMETRY__RESOURCE__RESOURCE_COMPASS_X", 34 },
+  { "RESOURCE_COMPASS_Y", "TELEMETRY__RESOURCE__RESOURCE_COMPASS_Y", 35 },
+  { "RESOURCE_COMPASS_Z", "TELEMETRY__RESOURCE__RESOURCE_COMPASS_Z", 36 },
+  { "RESOURCE_READ_SWITCH", "TELEMETRY__RESOURCE__RESOURCE_READ_SWITCH", 37 },
+  { "RESOURCE_PRESENCE", "TELEMETRY__RESOURCE__RESOURCE_PRESENCE", 38 },
+  { "RESOURCE_COUNTER", "TELEMETRY__RESOURCE__RESOURCE_COUNTER", 39 },
+  { "RESOURCE_INTERNAL_TEMPERATURE", "TELEMETRY__RESOURCE__RESOURCE_INTERNAL_TEMPERATURE", 40 },
+  { "RESOURCE_MOISTURE", "TELEMETRY__RESOURCE__RESOURCE_MOISTURE", 41 },
+  { "RESOURCE_APPARENT_POWER", "TELEMETRY__RESOURCE__RESOURCE_APPARENT_POWER", 42 },
+  { "RESOURCE_ACCUMULATED_POWER", "TELEMETRY__RESOURCE__RESOURCE_ACCUMULATED_POWER", 43 },
+  { "RESOURCE_REACTIVE_POWER", "TELEMETRY__RESOURCE__RESOURCE_REACTIVE_POWER", 44 },
+  { "RESOURCE_POWER_FACTOR", "TELEMETRY__RESOURCE__RESOURCE_POWER_FACTOR", 45 },
+  { "RESOURCE_LOG", "TELEMETRY__RESOURCE__RESOURCE_LOG", 46 },
+  { "RESOURCE_FREE_HEAP_SIZE", "TELEMETRY__RESOURCE__RESOURCE_FREE_HEAP_SIZE", 47 },
+  { "RESOURCE_LUMINOUS_FLUX", "TELEMETRY__RESOURCE__RESOURCE_LUMINOUS_FLUX", 48 },
+  { "RESOURCE_LUMINOUS_INTENSITY", "TELEMETRY__RESOURCE__RESOURCE_LUMINOUS_INTENSITY", 49 },
+  { "RESOURCE_BRIGHTESS", "TELEMETRY__RESOURCE__RESOURCE_BRIGHTESS", 50 },
+  { "RESOURCE_SWITCH", "TELEMETRY__RESOURCE__RESOURCE_SWITCH", 51 },
+  { "RESOURCE_CONFIG", "TELEMETRY__RESOURCE__RESOURCE_CONFIG", 52 },
+  { "RESOURCE_IRRADIANCE", "TELEMETRY__RESOURCE__RESOURCE_IRRADIANCE", 53 },
+  { "RESOURCE_FIRMWARE_VERSION", "TELEMETRY__RESOURCE__RESOURCE_FIRMWARE_VERSION", 54 },
+  { "RESOURCE_HARDWARE_VERSION", "TELEMETRY__RESOURCE__RESOURCE_HARDWARE_VERSION", 55 },
+  { "RESOURCE_HARDWARE_ID", "TELEMETRY__RESOURCE__RESOURCE_HARDWARE_ID", 56 },
+  { "RESOURCE_MANUFACTURING_DATE", "TELEMETRY__RESOURCE__RESOURCE_MANUFACTURING_DATE", 57 },
+  { "RESOURCE_DEVICE_NAME", "TELEMETRY__RESOURCE__RESOURCE_DEVICE_NAME", 58 },
 };
-static const ProtobufCIntRange telemetry__measurement__value_ranges[] = {
+static const ProtobufCIntRange telemetry__resource__value_ranges[] = {
 {0, 0},{0, 59}
 };
-static const ProtobufCEnumValueIndex telemetry__measurement__enum_values_by_name[60] =
+static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[60] =
 {
-  { "MEASUREMENT_ACCELERATION_X", 22 },
-  { "MEASUREMENT_ACCELERATION_Y", 23 },
-  { "MEASUREMENT_ACCELERATION_Z", 24 },
-  { "MEASUREMENT_ACCUMULATED_POWER", 43 },
-  { "MEASUREMENT_ALTITUDE", 5 },
-  { "MEASUREMENT_ANGLE", 8 },
-  { "MEASUREMENT_APPARENT_POWER", 42 },
-  { "MEASUREMENT_AREA", 15 },
-  { "MEASUREMENT_BATTERY_LEVEL", 30 },
-  { "MEASUREMENT_BATTERY_LEVEL_LOW", 33 },
-  { "MEASUREMENT_BATTERY_VOLTAGE", 31 },
-  { "MEASUREMENT_BREADTH", 10 },
-  { "MEASUREMENT_BRIGHTENING", 50 },
-  { "MEASUREMENT_BRIGHTESS", 50 },
-  { "MEASUREMENT_CO2_CONCENTRATION", 27 },
-  { "MEASUREMENT_COMPASS_X", 34 },
-  { "MEASUREMENT_COMPASS_Y", 35 },
-  { "MEASUREMENT_COMPASS_Z", 36 },
-  { "MEASUREMENT_CONFIG", 52 },
-  { "MEASUREMENT_COUNTER", 39 },
-  { "MEASUREMENT_CO_CONCENTRATION", 26 },
-  { "MEASUREMENT_DEVICE_NAME", 58 },
-  { "MEASUREMENT_DISTANCE", 14 },
-  { "MEASUREMENT_ELECTRIC_CURRENT", 18 },
-  { "MEASUREMENT_ELECTRIC_POTENTIAL", 19 },
-  { "MEASUREMENT_ELECTRIC_RESISTANCE", 20 },
-  { "MEASUREMENT_FIRMWARE_VERSION", 54 },
-  { "MEASUREMENT_FREE_HEAP_SIZE", 47 },
-  { "MEASUREMENT_FREQUENCY", 29 },
-  { "MEASUREMENT_HARDWARE_ID", 56 },
-  { "MEASUREMENT_HARDWARE_VERSION", 55 },
-  { "MEASUREMENT_HEADING", 25 },
-  { "MEASUREMENT_HEIGHT", 11 },
-  { "MEASUREMENT_HUMIDITY", 2 },
-  { "MEASUREMENT_ILLUMINANCE", 21 },
-  { "MEASUREMENT_INTERNAL_TEMPERATURE", 40 },
-  { "MEASUREMENT_IRRADIANCE", 53 },
-  { "MEASUREMENT_LATITUDE", 3 },
-  { "MEASUREMENT_LENGTH", 9 },
-  { "MEASUREMENT_LOG", 46 },
-  { "MEASUREMENT_LONGITUDE", 4 },
-  { "MEASUREMENT_LUMINOUS_FLUX", 48 },
-  { "MEASUREMENT_LUMINOUS_INTENSITY", 49 },
-  { "MEASUREMENT_MANUFACTURING_DATE", 57 },
-  { "MEASUREMENT_MOISTURE", 41 },
-  { "MEASUREMENT_POWER", 6 },
-  { "MEASUREMENT_POWER_FACTOR", 45 },
-  { "MEASUREMENT_PRESENCE", 38 },
-  { "MEASUREMENT_PRESSURE", 7 },
-  { "MEASUREMENT_RADIUS", 32 },
-  { "MEASUREMENT_REACTIVE_POWER", 44 },
-  { "MEASUREMENT_READ_SWITCH", 37 },
-  { "MEASUREMENT_SOUND", 28 },
-  { "MEASUREMENT_SWITCH", 51 },
-  { "MEASUREMENT_TEMPERATURE", 1 },
-  { "MEASUREMENT_THICKNESS", 13 },
-  { "MEASUREMENT_UNSPECIFIED", 0 },
-  { "MEASUREMENT_VELOCITY", 17 },
-  { "MEASUREMENT_VOLUME", 16 },
-  { "MEASUREMENT_WEIGHT", 12 },
+  { "RESOURCE_ACCELERATION_X", 22 },
+  { "RESOURCE_ACCELERATION_Y", 23 },
+  { "RESOURCE_ACCELERATION_Z", 24 },
+  { "RESOURCE_ACCUMULATED_POWER", 43 },
+  { "RESOURCE_ALTITUDE", 5 },
+  { "RESOURCE_ANGLE", 8 },
+  { "RESOURCE_APPARENT_POWER", 42 },
+  { "RESOURCE_AREA", 15 },
+  { "RESOURCE_BATTERY_LEVEL", 30 },
+  { "RESOURCE_BATTERY_LEVEL_LOW", 33 },
+  { "RESOURCE_BATTERY_VOLTAGE", 31 },
+  { "RESOURCE_BREADTH", 10 },
+  { "RESOURCE_BRIGHTENING", 50 },
+  { "RESOURCE_BRIGHTESS", 50 },
+  { "RESOURCE_CO2_CONCENTRATION", 27 },
+  { "RESOURCE_COMPASS_X", 34 },
+  { "RESOURCE_COMPASS_Y", 35 },
+  { "RESOURCE_COMPASS_Z", 36 },
+  { "RESOURCE_CONFIG", 52 },
+  { "RESOURCE_COUNTER", 39 },
+  { "RESOURCE_CO_CONCENTRATION", 26 },
+  { "RESOURCE_DEVICE_NAME", 58 },
+  { "RESOURCE_DISTANCE", 14 },
+  { "RESOURCE_ELECTRIC_CURRENT", 18 },
+  { "RESOURCE_ELECTRIC_POTENTIAL", 19 },
+  { "RESOURCE_ELECTRIC_RESISTANCE", 20 },
+  { "RESOURCE_FIRMWARE_VERSION", 54 },
+  { "RESOURCE_FREE_HEAP_SIZE", 47 },
+  { "RESOURCE_FREQUENCY", 29 },
+  { "RESOURCE_HARDWARE_ID", 56 },
+  { "RESOURCE_HARDWARE_VERSION", 55 },
+  { "RESOURCE_HEADING", 25 },
+  { "RESOURCE_HEIGHT", 11 },
+  { "RESOURCE_HUMIDITY", 2 },
+  { "RESOURCE_ILLUMINANCE", 21 },
+  { "RESOURCE_INTERNAL_TEMPERATURE", 40 },
+  { "RESOURCE_IRRADIANCE", 53 },
+  { "RESOURCE_LATITUDE", 3 },
+  { "RESOURCE_LENGTH", 9 },
+  { "RESOURCE_LOG", 46 },
+  { "RESOURCE_LONGITUDE", 4 },
+  { "RESOURCE_LUMINOUS_FLUX", 48 },
+  { "RESOURCE_LUMINOUS_INTENSITY", 49 },
+  { "RESOURCE_MANUFACTURING_DATE", 57 },
+  { "RESOURCE_MOISTURE", 41 },
+  { "RESOURCE_POWER", 6 },
+  { "RESOURCE_POWER_FACTOR", 45 },
+  { "RESOURCE_PRESENCE", 38 },
+  { "RESOURCE_PRESSURE", 7 },
+  { "RESOURCE_RADIUS", 32 },
+  { "RESOURCE_REACTIVE_POWER", 44 },
+  { "RESOURCE_READ_SWITCH", 37 },
+  { "RESOURCE_SOUND", 28 },
+  { "RESOURCE_SWITCH", 51 },
+  { "RESOURCE_TEMPERATURE", 1 },
+  { "RESOURCE_THICKNESS", 13 },
+  { "RESOURCE_UNSPECIFIED", 0 },
+  { "RESOURCE_VELOCITY", 17 },
+  { "RESOURCE_VOLUME", 16 },
+  { "RESOURCE_WEIGHT", 12 },
 };
-const ProtobufCEnumDescriptor telemetry__measurement__descriptor =
+const ProtobufCEnumDescriptor telemetry__resource__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "telemetry.Measurement",
-  "Measurement",
-  "Telemetry__Measurement",
+  "telemetry.Resource",
+  "Resource",
+  "Telemetry__Resource",
   "telemetry",
   59,
-  telemetry__measurement__enum_values_by_number,
+  telemetry__resource__enum_values_by_number,
   60,
-  telemetry__measurement__enum_values_by_name,
+  telemetry__resource__enum_values_by_name,
   1,
-  telemetry__measurement__value_ranges,
+  telemetry__resource__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
 static const ProtobufCEnumValue telemetry__unit__enum_values_by_number[62] =
@@ -784,20 +784,20 @@ const ProtobufCEnumDescriptor telemetry__unit__descriptor =
 static const ProtobufCEnumValue telemetry__network_type__enum_values_by_number[5] =
 {
   { "NETWORK_TYPE_UNSPECIFIED", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_UNSPECIFIED", 0 },
-  { "NETWORK_TYPE_AWS_IOT_MQTT", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_AWS_IOT_MQTT", 1 },
-  { "NETWORK_TYPE_KORE", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_KORE", 2 },
-  { "NETWORK_TYPE_CHIRPSTACK", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_CHIRPSTACK", 3 },
-  { "NETWORK_TYPE_AWS_IOT_LORAWAN", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_AWS_IOT_LORAWAN", 4 },
+  { "NETWORK_TYPE_MQTT_1", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_MQTT_1", 1 },
+  { "NETWORK_TYPE_LORAWAN_1", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_LORAWAN_1", 2 },
+  { "NETWORK_TYPE_LORAWAN_2", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_LORAWAN_2", 3 },
+  { "NETWORK_TYPE_LORAWAN_3", "TELEMETRY__NETWORK_TYPE__NETWORK_TYPE_LORAWAN_3", 4 },
 };
 static const ProtobufCIntRange telemetry__network_type__value_ranges[] = {
 {0, 0},{0, 5}
 };
 static const ProtobufCEnumValueIndex telemetry__network_type__enum_values_by_name[5] =
 {
-  { "NETWORK_TYPE_AWS_IOT_LORAWAN", 4 },
-  { "NETWORK_TYPE_AWS_IOT_MQTT", 1 },
-  { "NETWORK_TYPE_CHIRPSTACK", 3 },
-  { "NETWORK_TYPE_KORE", 2 },
+  { "NETWORK_TYPE_LORAWAN_1", 2 },
+  { "NETWORK_TYPE_LORAWAN_2", 3 },
+  { "NETWORK_TYPE_LORAWAN_3", 4 },
+  { "NETWORK_TYPE_MQTT_1", 1 },
   { "NETWORK_TYPE_UNSPECIFIED", 0 },
 };
 const ProtobufCEnumDescriptor telemetry__network_type__descriptor =
