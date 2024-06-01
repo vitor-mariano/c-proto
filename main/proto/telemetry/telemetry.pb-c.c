@@ -209,12 +209,12 @@ const ProtobufCMessageDescriptor telemetry__sem_ver__descriptor =
 static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[11] =
 {
   {
-    "resources",
+    "resource",
     1,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Telemetry__Record, resources),
+    offsetof(Telemetry__Record, resource),
     &telemetry__resource__descriptor,
     NULL,
     0,             /* flags */
@@ -347,7 +347,7 @@ static const unsigned telemetry__record__field_indices_by_name[] = {
   7,   /* field[7] = data_value */
   10,   /* field[10] = int_value */
   1,   /* field[1] = name */
-  0,   /* field[0] = resources */
+  0,   /* field[0] = resource */
   8,   /* field[8] = severity */
   5,   /* field[5] = string_value */
   3,   /* field[3] = time */

@@ -326,7 +326,7 @@ struct  _Telemetry__SemVer
 struct  _Telemetry__Record
 {
   ProtobufCMessage base;
-  Telemetry__Resource resources;
+  Telemetry__Resource resource;
   int64_t time;
   double value;
   char *string_value;
