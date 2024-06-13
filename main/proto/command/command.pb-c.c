@@ -219,7 +219,7 @@ const ProtobufCMessageDescriptor command__trigger__descriptor =
   (ProtobufCMessageInit) command__trigger__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor command__command__field_descriptors[9] =
+static const ProtobufCFieldDescriptor command__command__field_descriptors[10] =
 {
   {
     "resource_id",
@@ -329,12 +329,25 @@ static const ProtobufCFieldDescriptor command__command__field_descriptors[9] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "int_value",
+    10,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_INT64,
+    0,   /* quantifier_offset */
+    offsetof(Command__Command, int_value),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned command__command__field_indices_by_name[] = {
   3,   /* field[3] = bool_value */
   7,   /* field[7] = cron */
   4,   /* field[4] = data_value */
   8,   /* field[8] = duration */
+  9,   /* field[9] = int_value */
   0,   /* field[0] = resource_id */
   2,   /* field[2] = string_value */
   6,   /* field[6] = trigger */
@@ -344,7 +357,7 @@ static const unsigned command__command__field_indices_by_name[] = {
 static const ProtobufCIntRange command__command__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 9 }
+  { 0, 10 }
 };
 const ProtobufCMessageDescriptor command__command__descriptor =
 {
@@ -354,7 +367,7 @@ const ProtobufCMessageDescriptor command__command__descriptor =
   "Command__Command",
   "command",
   sizeof(Command__Command),
-  9,
+  10,
   command__command__field_descriptors,
   command__command__field_indices_by_name,
   1,  command__command__number_ranges,

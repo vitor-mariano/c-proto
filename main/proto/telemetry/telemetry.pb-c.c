@@ -490,7 +490,7 @@ const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
   (ProtobufCMessageInit) telemetry__telemetry_pack__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[59] =
+static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[60] =
 {
   { "RESOURCE_UNSPECIFIED", "TELEMETRY__RESOURCE__RESOURCE_UNSPECIFIED", 0 },
   { "RESOURCE_TEMPERATURE", "TELEMETRY__RESOURCE__RESOURCE_TEMPERATURE", 1 },
@@ -551,11 +551,12 @@ static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[59] =
   { "RESOURCE_HARDWARE_ID", "TELEMETRY__RESOURCE__RESOURCE_HARDWARE_ID", 56 },
   { "RESOURCE_MANUFACTURING_DATE", "TELEMETRY__RESOURCE__RESOURCE_MANUFACTURING_DATE", 57 },
   { "RESOURCE_DEVICE_NAME", "TELEMETRY__RESOURCE__RESOURCE_DEVICE_NAME", 58 },
+  { "RESOURCE_CONNECTED_NETWORK", "TELEMETRY__RESOURCE__RESOURCE_CONNECTED_NETWORK", 59 },
 };
 static const ProtobufCIntRange telemetry__resource__value_ranges[] = {
-{0, 0},{0, 59}
+{0, 0},{0, 60}
 };
-static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[60] =
+static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[61] =
 {
   { "RESOURCE_ACCELERATION_X", 22 },
   { "RESOURCE_ACCELERATION_Y", 23 },
@@ -576,6 +577,7 @@ static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[60
   { "RESOURCE_COMPASS_Y", 35 },
   { "RESOURCE_COMPASS_Z", 36 },
   { "RESOURCE_CONFIG", 52 },
+  { "RESOURCE_CONNECTED_NETWORK", 59 },
   { "RESOURCE_COUNTER", 39 },
   { "RESOURCE_CO_CONCENTRATION", 26 },
   { "RESOURCE_DEVICE_NAME", 58 },
@@ -625,9 +627,9 @@ const ProtobufCEnumDescriptor telemetry__resource__descriptor =
   "Resource",
   "Telemetry__Resource",
   "telemetry",
-  59,
-  telemetry__resource__enum_values_by_number,
   60,
+  telemetry__resource__enum_values_by_number,
+  61,
   telemetry__resource__enum_values_by_name,
   1,
   telemetry__resource__value_ranges,

@@ -63,10 +63,11 @@ struct  _Command__Command
   Command__Trigger *trigger;
   char *cron;
   uint32_t duration;
+  int64_t int_value;
 };
 #define COMMAND__COMMAND__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&command__command__descriptor) \
-    , 0, 0, (char *)protobuf_c_empty_string, 0, {0,NULL}, TELEMETRY__UNIT__UNIT_UNSPECIFIED, NULL, (char *)protobuf_c_empty_string, 0 }
+    , 0, 0, (char *)protobuf_c_empty_string, 0, {0,NULL}, TELEMETRY__UNIT__UNIT_UNSPECIFIED, NULL, (char *)protobuf_c_empty_string, 0, 0 }
 
 
 struct  _Command__CommandPack
