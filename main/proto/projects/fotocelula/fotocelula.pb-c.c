@@ -7,7 +7,7 @@
 #endif
 
 #include "projects/fotocelula/fotocelula.pb-c.h"
-static const ProtobufCEnumValue projects__fotocelula__resource__enum_values_by_number[12] =
+static const ProtobufCEnumValue projects__fotocelula__resource__enum_values_by_number[13] =
 {
   { "RESOURCE_UNSPECIFIED", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_UNSPECIFIED", 0 },
   { "RESOURCE_FACTORY_RESET", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_FACTORY_RESET", 1 },
@@ -21,11 +21,12 @@ static const ProtobufCEnumValue projects__fotocelula__resource__enum_values_by_n
   { "RESOURCE_SET_NAME", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_SET_NAME", 9 },
   { "RESOURCE_REBOOT", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_REBOOT", 10 },
   { "RESOURCE_CLEAR_ALL_RESOURCE_SCHEDULES", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_CLEAR_ALL_RESOURCE_SCHEDULES", 11 },
+  { "RESOURCE_SET_TELEMETRY_BEHAVIOR", "PROJECTS__FOTOCELULA__RESOURCE__RESOURCE_SET_TELEMETRY_BEHAVIOR", 12 },
 };
 static const ProtobufCIntRange projects__fotocelula__resource__value_ranges[] = {
-{0, 0},{0, 12}
+{0, 0},{0, 13}
 };
-static const ProtobufCEnumValueIndex projects__fotocelula__resource__enum_values_by_name[12] =
+static const ProtobufCEnumValueIndex projects__fotocelula__resource__enum_values_by_name[13] =
 {
   { "RESOURCE_BRIGHTNESS_SCHEDULE", 4 },
   { "RESOURCE_CLEAR_ALL_BRIGHTNESS_SCHEDULES", 6 },
@@ -37,6 +38,7 @@ static const ProtobufCEnumValueIndex projects__fotocelula__resource__enum_values
   { "RESOURCE_SET_LIGHT", 2 },
   { "RESOURCE_SET_MANUAL_MODE", 7 },
   { "RESOURCE_SET_NAME", 9 },
+  { "RESOURCE_SET_TELEMETRY_BEHAVIOR", 12 },
   { "RESOURCE_SET_UPLINK_FREQUENCY", 8 },
   { "RESOURCE_UNSPECIFIED", 0 },
 };
@@ -47,9 +49,9 @@ const ProtobufCEnumDescriptor projects__fotocelula__resource__descriptor =
   "Resource",
   "Projects__Fotocelula__Resource",
   "projects.fotocelula",
-  12,
+  13,
   projects__fotocelula__resource__enum_values_by_number,
-  12,
+  13,
   projects__fotocelula__resource__enum_values_by_name,
   1,
   projects__fotocelula__resource__value_ranges,

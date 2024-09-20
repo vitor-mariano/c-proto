@@ -142,7 +142,7 @@ void   command__command_pack__free_unpacked
   assert(message->base.descriptor == &command__command_pack__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor command__trigger__field_descriptors[4] =
+static const ProtobufCFieldDescriptor command__trigger__field_descriptors[5] =
 {
   {
     "type",
@@ -192,8 +192,21 @@ static const ProtobufCFieldDescriptor command__trigger__field_descriptors[4] =
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
+  {
+    "int_value",
+    5,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_INT64,
+    0,   /* quantifier_offset */
+    offsetof(Command__Trigger, int_value),
+    NULL,
+    NULL,
+    0,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
 };
 static const unsigned command__trigger__field_indices_by_name[] = {
+  4,   /* field[4] = int_value */
   2,   /* field[2] = range */
   3,   /* field[3] = resource */
   0,   /* field[0] = type */
@@ -202,7 +215,7 @@ static const unsigned command__trigger__field_indices_by_name[] = {
 static const ProtobufCIntRange command__trigger__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 4 }
+  { 0, 5 }
 };
 const ProtobufCMessageDescriptor command__trigger__descriptor =
 {
@@ -212,7 +225,7 @@ const ProtobufCMessageDescriptor command__trigger__descriptor =
   "Command__Trigger",
   "command",
   sizeof(Command__Trigger),
-  4,
+  5,
   command__trigger__field_descriptors,
   command__trigger__field_indices_by_name,
   1,  command__trigger__number_ranges,
