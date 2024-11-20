@@ -490,7 +490,7 @@ const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
   (ProtobufCMessageInit) telemetry__telemetry_pack__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[61] =
+static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[66] =
 {
   { "RESOURCE_UNSPECIFIED", "TELEMETRY__RESOURCE__RESOURCE_UNSPECIFIED", 0 },
   { "RESOURCE_TEMPERATURE", "TELEMETRY__RESOURCE__RESOURCE_TEMPERATURE", 1 },
@@ -553,11 +553,16 @@ static const ProtobufCEnumValue telemetry__resource__enum_values_by_number[61] =
   { "RESOURCE_DEVICE_NAME", "TELEMETRY__RESOURCE__RESOURCE_DEVICE_NAME", 58 },
   { "RESOURCE_CONNECTED_NETWORK", "TELEMETRY__RESOURCE__RESOURCE_CONNECTED_NETWORK", 59 },
   { "RESOURCE_CONNECTED", "TELEMETRY__RESOURCE__RESOURCE_CONNECTED", 60 },
+  { "RESOURCE_N_CONCENTRATION", "TELEMETRY__RESOURCE__RESOURCE_N_CONCENTRATION", 61 },
+  { "RESOURCE_P_CONCENTRATION", "TELEMETRY__RESOURCE__RESOURCE_P_CONCENTRATION", 62 },
+  { "RESOURCE_K_CONCENTRATION", "TELEMETRY__RESOURCE__RESOURCE_K_CONCENTRATION", 63 },
+  { "RESOURCE_CONDUCTIVITY", "TELEMETRY__RESOURCE__RESOURCE_CONDUCTIVITY", 64 },
+  { "RESOURCE_PH", "TELEMETRY__RESOURCE__RESOURCE_PH", 65 },
 };
 static const ProtobufCIntRange telemetry__resource__value_ranges[] = {
-{0, 0},{0, 61}
+{0, 0},{0, 66}
 };
-static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[62] =
+static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[67] =
 {
   { "RESOURCE_ACCELERATION_X", 22 },
   { "RESOURCE_ACCELERATION_Y", 23 },
@@ -577,6 +582,7 @@ static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[62
   { "RESOURCE_COMPASS_X", 34 },
   { "RESOURCE_COMPASS_Y", 35 },
   { "RESOURCE_COMPASS_Z", 36 },
+  { "RESOURCE_CONDUCTIVITY", 64 },
   { "RESOURCE_CONFIG", 52 },
   { "RESOURCE_CONNECTED", 60 },
   { "RESOURCE_CONNECTED_NETWORK", 59 },
@@ -598,6 +604,7 @@ static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[62
   { "RESOURCE_ILLUMINANCE", 21 },
   { "RESOURCE_INTERNAL_TEMPERATURE", 40 },
   { "RESOURCE_IRRADIANCE", 53 },
+  { "RESOURCE_K_CONCENTRATION", 63 },
   { "RESOURCE_LATITUDE", 3 },
   { "RESOURCE_LENGTH", 9 },
   { "RESOURCE_LOG", 46 },
@@ -606,10 +613,13 @@ static const ProtobufCEnumValueIndex telemetry__resource__enum_values_by_name[62
   { "RESOURCE_LUMINOUS_INTENSITY", 49 },
   { "RESOURCE_MANUFACTURING_DATE", 57 },
   { "RESOURCE_MOISTURE", 41 },
+  { "RESOURCE_N_CONCENTRATION", 61 },
+  { "RESOURCE_PH", 65 },
   { "RESOURCE_POWER", 6 },
   { "RESOURCE_POWER_FACTOR", 45 },
   { "RESOURCE_PRESENCE", 38 },
   { "RESOURCE_PRESSURE", 7 },
+  { "RESOURCE_P_CONCENTRATION", 62 },
   { "RESOURCE_RADIUS", 32 },
   { "RESOURCE_REACTIVE_POWER", 44 },
   { "RESOURCE_READ_SWITCH", 37 },
@@ -629,9 +639,9 @@ const ProtobufCEnumDescriptor telemetry__resource__descriptor =
   "Resource",
   "Telemetry__Resource",
   "telemetry",
-  61,
+  66,
   telemetry__resource__enum_values_by_number,
-  62,
+  67,
   telemetry__resource__enum_values_by_name,
   1,
   telemetry__resource__value_ranges,
