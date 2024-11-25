@@ -7,7 +7,7 @@
 #endif
 
 #include "projects/concentradora/concentradora.pb-c.h"
-static const ProtobufCEnumValue projects__concentradora__alert__enum_values_by_number[6] =
+static const ProtobufCEnumValue projects__concentradora__alert__enum_values_by_number[7] =
 {
   { "ALERT_UNSPECIFIED", "PROJECTS__CONCENTRADORA__ALERT__ALERT_UNSPECIFIED", 0 },
   { "ALERT_NO_VOLTAGE", "PROJECTS__CONCENTRADORA__ALERT__ALERT_NO_VOLTAGE", 1 },
@@ -15,17 +15,19 @@ static const ProtobufCEnumValue projects__concentradora__alert__enum_values_by_n
   { "ALERT_HIGH_VOLTAGE", "PROJECTS__CONCENTRADORA__ALERT__ALERT_HIGH_VOLTAGE", 3 },
   { "ALERT_HIGH_INTERNAL_TEMPERATURE", "PROJECTS__CONCENTRADORA__ALERT__ALERT_HIGH_INTERNAL_TEMPERATURE", 4 },
   { "ALERT_HIGH_EXTERNAL_TEMPERATURE", "PROJECTS__CONCENTRADORA__ALERT__ALERT_HIGH_EXTERNAL_TEMPERATURE", 5 },
+  { "ALERT_POWER_OUTAGE", "PROJECTS__CONCENTRADORA__ALERT__ALERT_POWER_OUTAGE", 7 },
 };
 static const ProtobufCIntRange projects__concentradora__alert__value_ranges[] = {
-{0, 0},{0, 6}
+{0, 0},{7, 6},{0, 7}
 };
-static const ProtobufCEnumValueIndex projects__concentradora__alert__enum_values_by_name[6] =
+static const ProtobufCEnumValueIndex projects__concentradora__alert__enum_values_by_name[7] =
 {
   { "ALERT_HIGH_EXTERNAL_TEMPERATURE", 5 },
   { "ALERT_HIGH_INTERNAL_TEMPERATURE", 4 },
   { "ALERT_HIGH_VOLTAGE", 3 },
   { "ALERT_LOW_VOLTAGE", 2 },
   { "ALERT_NO_VOLTAGE", 1 },
+  { "ALERT_POWER_OUTAGE", 6 },
   { "ALERT_UNSPECIFIED", 0 },
 };
 const ProtobufCEnumDescriptor projects__concentradora__alert__descriptor =
@@ -35,11 +37,11 @@ const ProtobufCEnumDescriptor projects__concentradora__alert__descriptor =
   "Alert",
   "Projects__Concentradora__Alert",
   "projects.concentradora",
-  6,
+  7,
   projects__concentradora__alert__enum_values_by_number,
-  6,
+  7,
   projects__concentradora__alert__enum_values_by_name,
-  1,
+  2,
   projects__concentradora__alert__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
