@@ -248,7 +248,8 @@ typedef enum _Telemetry__Resource {
   /*
    * pH
    */
-  TELEMETRY__RESOURCE__RESOURCE_PH = 65
+  TELEMETRY__RESOURCE__RESOURCE_PH = 65,
+  TELEMETRY__RESOURCE__RESOURCE_MESH_LEVEL = 66
     PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(TELEMETRY__RESOURCE)
 } Telemetry__Resource;
 typedef enum _Telemetry__Unit {
