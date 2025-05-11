@@ -831,20 +831,22 @@ const ProtobufCEnumDescriptor telemetry__network_type__descriptor =
   telemetry__network_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCEnumValue telemetry__severity__enum_values_by_number[3] =
+static const ProtobufCEnumValue telemetry__severity__enum_values_by_number[4] =
 {
   { "SEVERITY_UNSPECIFIED", "TELEMETRY__SEVERITY__SEVERITY_UNSPECIFIED", 0 },
   { "SEVERITY_LOW", "TELEMETRY__SEVERITY__SEVERITY_LOW", 1 },
   { "SEVERITY_HIGH", "TELEMETRY__SEVERITY__SEVERITY_HIGH", 2 },
+  { "SEVERITY_URGENT", "TELEMETRY__SEVERITY__SEVERITY_URGENT", 3 },
 };
 static const ProtobufCIntRange telemetry__severity__value_ranges[] = {
-{0, 0},{0, 3}
+{0, 0},{0, 4}
 };
-static const ProtobufCEnumValueIndex telemetry__severity__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex telemetry__severity__enum_values_by_name[4] =
 {
   { "SEVERITY_HIGH", 2 },
   { "SEVERITY_LOW", 1 },
   { "SEVERITY_UNSPECIFIED", 0 },
+  { "SEVERITY_URGENT", 3 },
 };
 const ProtobufCEnumDescriptor telemetry__severity__descriptor =
 {
@@ -853,9 +855,9 @@ const ProtobufCEnumDescriptor telemetry__severity__descriptor =
   "Severity",
   "Telemetry__Severity",
   "telemetry",
-  3,
+  4,
   telemetry__severity__enum_values_by_number,
-  3,
+  4,
   telemetry__severity__enum_values_by_name,
   1,
   telemetry__severity__value_ranges,
