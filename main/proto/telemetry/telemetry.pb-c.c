@@ -206,7 +206,7 @@ const ProtobufCMessageDescriptor telemetry__sem_ver__descriptor =
   (ProtobufCMessageInit) telemetry__sem_ver__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[11] =
+static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[9] =
 {
   {
     "resource",
@@ -216,30 +216,6 @@ static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[11] =
     0,   /* quantifier_offset */
     offsetof(Telemetry__Record, resource),
     &telemetry__resource__descriptor,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
-    "name",
-    2,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_STRING,
-    0,   /* quantifier_offset */
-    offsetof(Telemetry__Record, name),
-    NULL,
-    &protobuf_c_empty_string,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
-    "unit",
-    3,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_ENUM,
-    0,   /* quantifier_offset */
-    offsetof(Telemetry__Record, unit),
-    &telemetry__unit__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -342,22 +318,21 @@ static const ProtobufCFieldDescriptor telemetry__record__field_descriptors[11] =
   },
 };
 static const unsigned telemetry__record__field_indices_by_name[] = {
-  9,   /* field[9] = alert_id */
-  6,   /* field[6] = bool_value */
-  7,   /* field[7] = data_value */
-  10,   /* field[10] = int_value */
-  1,   /* field[1] = name */
+  7,   /* field[7] = alert_id */
+  4,   /* field[4] = bool_value */
+  5,   /* field[5] = data_value */
+  8,   /* field[8] = int_value */
   0,   /* field[0] = resource */
-  8,   /* field[8] = severity */
-  5,   /* field[5] = string_value */
-  3,   /* field[3] = time */
-  2,   /* field[2] = unit */
-  4,   /* field[4] = value */
+  6,   /* field[6] = severity */
+  3,   /* field[3] = string_value */
+  1,   /* field[1] = time */
+  2,   /* field[2] = value */
 };
-static const ProtobufCIntRange telemetry__record__number_ranges[1 + 1] =
+static const ProtobufCIntRange telemetry__record__number_ranges[2 + 1] =
 {
   { 1, 0 },
-  { 0, 11 }
+  { 4, 1 },
+  { 0, 9 }
 };
 const ProtobufCMessageDescriptor telemetry__record__descriptor =
 {
@@ -367,14 +342,14 @@ const ProtobufCMessageDescriptor telemetry__record__descriptor =
   "Telemetry__Record",
   "telemetry",
   sizeof(Telemetry__Record),
-  11,
+  9,
   telemetry__record__field_descriptors,
   telemetry__record__field_indices_by_name,
-  1,  telemetry__record__number_ranges,
+  2,  telemetry__record__number_ranges,
   (ProtobufCMessageInit) telemetry__record__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descriptors[7] =
+static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descriptors[5] =
 {
   {
     "records",
@@ -401,18 +376,6 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "base_name",
-    3,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_STRING,
-    0,   /* quantifier_offset */
-    offsetof(Telemetry__TelemetryPack, base_name),
-    NULL,
-    &protobuf_c_empty_string,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
     "base_time",
     4,
     PROTOBUF_C_LABEL_NONE,
@@ -420,18 +383,6 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
     0,   /* quantifier_offset */
     offsetof(Telemetry__TelemetryPack, base_time),
     NULL,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
-    "base_unit",
-    5,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_ENUM,
-    0,   /* quantifier_offset */
-    offsetof(Telemetry__TelemetryPack, base_unit),
-    &telemetry__unit__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -462,18 +413,18 @@ static const ProtobufCFieldDescriptor telemetry__telemetry_pack__field_descripto
   },
 };
 static const unsigned telemetry__telemetry_pack__field_indices_by_name[] = {
-  2,   /* field[2] = base_name */
   1,   /* field[1] = base_resource */
-  3,   /* field[3] = base_time */
-  4,   /* field[4] = base_unit */
-  6,   /* field[6] = network_id */
-  5,   /* field[5] = network_type */
+  2,   /* field[2] = base_time */
+  4,   /* field[4] = network_id */
+  3,   /* field[3] = network_type */
   0,   /* field[0] = records */
 };
-static const ProtobufCIntRange telemetry__telemetry_pack__number_ranges[1 + 1] =
+static const ProtobufCIntRange telemetry__telemetry_pack__number_ranges[3 + 1] =
 {
   { 1, 0 },
-  { 0, 7 }
+  { 4, 2 },
+  { 6, 3 },
+  { 0, 5 }
 };
 const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
 {
@@ -483,10 +434,10 @@ const ProtobufCMessageDescriptor telemetry__telemetry_pack__descriptor =
   "Telemetry__TelemetryPack",
   "telemetry",
   sizeof(Telemetry__TelemetryPack),
-  7,
+  5,
   telemetry__telemetry_pack__field_descriptors,
   telemetry__telemetry_pack__field_indices_by_name,
-  1,  telemetry__telemetry_pack__number_ranges,
+  3,  telemetry__telemetry_pack__number_ranges,
   (ProtobufCMessageInit) telemetry__telemetry_pack__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
@@ -647,154 +598,6 @@ const ProtobufCEnumDescriptor telemetry__resource__descriptor =
   telemetry__resource__enum_values_by_name,
   1,
   telemetry__resource__value_ranges,
-  NULL,NULL,NULL,NULL   /* reserved[1234] */
-};
-static const ProtobufCEnumValue telemetry__unit__enum_values_by_number[62] =
-{
-  { "UNIT_UNSPECIFIED", "TELEMETRY__UNIT__UNIT_UNSPECIFIED", 0 },
-  { "UNIT_METER", "TELEMETRY__UNIT__UNIT_METER", 1 },
-  { "UNIT_KILOGRAM", "TELEMETRY__UNIT__UNIT_KILOGRAM", 2 },
-  { "UNIT_GRAM", "TELEMETRY__UNIT__UNIT_GRAM", 3 },
-  { "UNIT_SECOND", "TELEMETRY__UNIT__UNIT_SECOND", 4 },
-  { "UNIT_AMPERE", "TELEMETRY__UNIT__UNIT_AMPERE", 5 },
-  { "UNIT_KELVIN", "TELEMETRY__UNIT__UNIT_KELVIN", 6 },
-  { "UNIT_CANDELA", "TELEMETRY__UNIT__UNIT_CANDELA", 7 },
-  { "UNIT_MOLE", "TELEMETRY__UNIT__UNIT_MOLE", 8 },
-  { "UNIT_HERTZ", "TELEMETRY__UNIT__UNIT_HERTZ", 9 },
-  { "UNIT_RADIAN", "TELEMETRY__UNIT__UNIT_RADIAN", 10 },
-  { "UNIT_STERADIAN", "TELEMETRY__UNIT__UNIT_STERADIAN", 11 },
-  { "UNIT_NEWTON", "TELEMETRY__UNIT__UNIT_NEWTON", 12 },
-  { "UNIT_PASCAL", "TELEMETRY__UNIT__UNIT_PASCAL", 13 },
-  { "UNIT_JOULE", "TELEMETRY__UNIT__UNIT_JOULE", 14 },
-  { "UNIT_WATT", "TELEMETRY__UNIT__UNIT_WATT", 15 },
-  { "UNIT_COULOMB", "TELEMETRY__UNIT__UNIT_COULOMB", 16 },
-  { "UNIT_VOLT", "TELEMETRY__UNIT__UNIT_VOLT", 17 },
-  { "UNIT_FARAD", "TELEMETRY__UNIT__UNIT_FARAD", 18 },
-  { "UNIT_OHM", "TELEMETRY__UNIT__UNIT_OHM", 19 },
-  { "UNIT_SIEMENS", "TELEMETRY__UNIT__UNIT_SIEMENS", 20 },
-  { "UNIT_WEBER", "TELEMETRY__UNIT__UNIT_WEBER", 21 },
-  { "UNIT_TESLA", "TELEMETRY__UNIT__UNIT_TESLA", 22 },
-  { "UNIT_HENRY", "TELEMETRY__UNIT__UNIT_HENRY", 23 },
-  { "UNIT_DEGREES_CELSIUS", "TELEMETRY__UNIT__UNIT_DEGREES_CELSIUS", 24 },
-  { "UNIT_LUMEN", "TELEMETRY__UNIT__UNIT_LUMEN", 25 },
-  { "UNIT_LUX", "TELEMETRY__UNIT__UNIT_LUX", 26 },
-  { "UNIT_BECQUEREL", "TELEMETRY__UNIT__UNIT_BECQUEREL", 27 },
-  { "UNIT_GRAY", "TELEMETRY__UNIT__UNIT_GRAY", 28 },
-  { "UNIT_SIEVERT", "TELEMETRY__UNIT__UNIT_SIEVERT", 29 },
-  { "UNIT_KATAL", "TELEMETRY__UNIT__UNIT_KATAL", 30 },
-  { "UNIT_SQUARE_METER", "TELEMETRY__UNIT__UNIT_SQUARE_METER", 31 },
-  { "UNIT_CUBIC_METER", "TELEMETRY__UNIT__UNIT_CUBIC_METER", 32 },
-  { "UNIT_LITER", "TELEMETRY__UNIT__UNIT_LITER", 33 },
-  { "UNIT_METER_PER_SECOND", "TELEMETRY__UNIT__UNIT_METER_PER_SECOND", 34 },
-  { "UNIT_METER_PER_SQUARE_SECOND", "TELEMETRY__UNIT__UNIT_METER_PER_SQUARE_SECOND", 35 },
-  { "UNIT_CUBIC_METER_PER_SECOND", "TELEMETRY__UNIT__UNIT_CUBIC_METER_PER_SECOND", 36 },
-  { "UNIT_LITER_PER_SECOND", "TELEMETRY__UNIT__UNIT_LITER_PER_SECOND", 37 },
-  { "UNIT_WATT_PER_SQUARE_METER", "TELEMETRY__UNIT__UNIT_WATT_PER_SQUARE_METER", 38 },
-  { "UNIT_CANDELA_PER_SQUARE_METER", "TELEMETRY__UNIT__UNIT_CANDELA_PER_SQUARE_METER", 39 },
-  { "UNIT_BIT", "TELEMETRY__UNIT__UNIT_BIT", 40 },
-  { "UNIT_BIT_PER_SECOND", "TELEMETRY__UNIT__UNIT_BIT_PER_SECOND", 41 },
-  { "UNIT_BYTE", "TELEMETRY__UNIT__UNIT_BYTE", 42 },
-  { "UNIT_BYTE_PER_SECOND", "TELEMETRY__UNIT__UNIT_BYTE_PER_SECOND", 43 },
-  { "UNIT_LATITUDE", "TELEMETRY__UNIT__UNIT_LATITUDE", 44 },
-  { "UNIT_LONGITUDE", "TELEMETRY__UNIT__UNIT_LONGITUDE", 45 },
-  { "UNIT_PH", "TELEMETRY__UNIT__UNIT_PH", 46 },
-  { "UNIT_DECIBEL", "TELEMETRY__UNIT__UNIT_DECIBEL", 47 },
-  { "UNIT_DECIBEL_WATT", "TELEMETRY__UNIT__UNIT_DECIBEL_WATT", 48 },
-  { "UNIT_BEL", "TELEMETRY__UNIT__UNIT_BEL", 49 },
-  { "UNIT_COUNT", "TELEMETRY__UNIT__UNIT_COUNT", 50 },
-  { "UNIT_RATIO", "TELEMETRY__UNIT__UNIT_RATIO", 51 },
-  { "UNIT_RELATIVE_HUMIDITY_PERCENTAGE", "TELEMETRY__UNIT__UNIT_RELATIVE_HUMIDITY_PERCENTAGE", 52 },
-  { "UNIT_ENERGY_LEVEL_PERCENTAGE", "TELEMETRY__UNIT__UNIT_ENERGY_LEVEL_PERCENTAGE", 53 },
-  { "UNIT_ENERGY_LEVEL_SECONDS_REMAINING", "TELEMETRY__UNIT__UNIT_ENERGY_LEVEL_SECONDS_REMAINING", 54 },
-  { "UNIT_RATE_PER_SECOND", "TELEMETRY__UNIT__UNIT_RATE_PER_SECOND", 55 },
-  { "UNIT_RATE_PER_MINUTE", "TELEMETRY__UNIT__UNIT_RATE_PER_MINUTE", 56 },
-  { "UNIT_BEAT_PER_MINUTE", "TELEMETRY__UNIT__UNIT_BEAT_PER_MINUTE", 57 },
-  { "UNIT_BEAT", "TELEMETRY__UNIT__UNIT_BEAT", 58 },
-  { "UNIT_SIEMENS_PER_METER", "TELEMETRY__UNIT__UNIT_SIEMENS_PER_METER", 59 },
-  { "UNIT_PART_PER_MILLION", "TELEMETRY__UNIT__UNIT_PART_PER_MILLION", 60 },
-  { "UNIT_VOLT_AMPERE", "TELEMETRY__UNIT__UNIT_VOLT_AMPERE", 61 },
-};
-static const ProtobufCIntRange telemetry__unit__value_ranges[] = {
-{0, 0},{0, 62}
-};
-static const ProtobufCEnumValueIndex telemetry__unit__enum_values_by_name[62] =
-{
-  { "UNIT_AMPERE", 5 },
-  { "UNIT_BEAT", 58 },
-  { "UNIT_BEAT_PER_MINUTE", 57 },
-  { "UNIT_BECQUEREL", 27 },
-  { "UNIT_BEL", 49 },
-  { "UNIT_BIT", 40 },
-  { "UNIT_BIT_PER_SECOND", 41 },
-  { "UNIT_BYTE", 42 },
-  { "UNIT_BYTE_PER_SECOND", 43 },
-  { "UNIT_CANDELA", 7 },
-  { "UNIT_CANDELA_PER_SQUARE_METER", 39 },
-  { "UNIT_COULOMB", 16 },
-  { "UNIT_COUNT", 50 },
-  { "UNIT_CUBIC_METER", 32 },
-  { "UNIT_CUBIC_METER_PER_SECOND", 36 },
-  { "UNIT_DECIBEL", 47 },
-  { "UNIT_DECIBEL_WATT", 48 },
-  { "UNIT_DEGREES_CELSIUS", 24 },
-  { "UNIT_ENERGY_LEVEL_PERCENTAGE", 53 },
-  { "UNIT_ENERGY_LEVEL_SECONDS_REMAINING", 54 },
-  { "UNIT_FARAD", 18 },
-  { "UNIT_GRAM", 3 },
-  { "UNIT_GRAY", 28 },
-  { "UNIT_HENRY", 23 },
-  { "UNIT_HERTZ", 9 },
-  { "UNIT_JOULE", 14 },
-  { "UNIT_KATAL", 30 },
-  { "UNIT_KELVIN", 6 },
-  { "UNIT_KILOGRAM", 2 },
-  { "UNIT_LATITUDE", 44 },
-  { "UNIT_LITER", 33 },
-  { "UNIT_LITER_PER_SECOND", 37 },
-  { "UNIT_LONGITUDE", 45 },
-  { "UNIT_LUMEN", 25 },
-  { "UNIT_LUX", 26 },
-  { "UNIT_METER", 1 },
-  { "UNIT_METER_PER_SECOND", 34 },
-  { "UNIT_METER_PER_SQUARE_SECOND", 35 },
-  { "UNIT_MOLE", 8 },
-  { "UNIT_NEWTON", 12 },
-  { "UNIT_OHM", 19 },
-  { "UNIT_PART_PER_MILLION", 60 },
-  { "UNIT_PASCAL", 13 },
-  { "UNIT_PH", 46 },
-  { "UNIT_RADIAN", 10 },
-  { "UNIT_RATE_PER_MINUTE", 56 },
-  { "UNIT_RATE_PER_SECOND", 55 },
-  { "UNIT_RATIO", 51 },
-  { "UNIT_RELATIVE_HUMIDITY_PERCENTAGE", 52 },
-  { "UNIT_SECOND", 4 },
-  { "UNIT_SIEMENS", 20 },
-  { "UNIT_SIEMENS_PER_METER", 59 },
-  { "UNIT_SIEVERT", 29 },
-  { "UNIT_SQUARE_METER", 31 },
-  { "UNIT_STERADIAN", 11 },
-  { "UNIT_TESLA", 22 },
-  { "UNIT_UNSPECIFIED", 0 },
-  { "UNIT_VOLT", 17 },
-  { "UNIT_VOLT_AMPERE", 61 },
-  { "UNIT_WATT", 15 },
-  { "UNIT_WATT_PER_SQUARE_METER", 38 },
-  { "UNIT_WEBER", 21 },
-};
-const ProtobufCEnumDescriptor telemetry__unit__descriptor =
-{
-  PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "telemetry.Unit",
-  "Unit",
-  "Telemetry__Unit",
-  "telemetry",
-  62,
-  telemetry__unit__enum_values_by_number,
-  62,
-  telemetry__unit__enum_values_by_name,
-  1,
-  telemetry__unit__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
 static const ProtobufCEnumValue telemetry__network_type__enum_values_by_number[5] =

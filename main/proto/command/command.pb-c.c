@@ -232,7 +232,7 @@ const ProtobufCMessageDescriptor command__trigger__descriptor =
   (ProtobufCMessageInit) command__trigger__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor command__command__field_descriptors[10] =
+static const ProtobufCFieldDescriptor command__command__field_descriptors[9] =
 {
   {
     "resource_id",
@@ -295,18 +295,6 @@ static const ProtobufCFieldDescriptor command__command__field_descriptors[10] =
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
   {
-    "unit",
-    6,
-    PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_ENUM,
-    0,   /* quantifier_offset */
-    offsetof(Command__Command, unit),
-    &telemetry__unit__descriptor,
-    NULL,
-    0,             /* flags */
-    0,NULL,NULL    /* reserved1,reserved2, etc */
-  },
-  {
     "trigger",
     7,
     PROTOBUF_C_LABEL_NONE,
@@ -357,20 +345,20 @@ static const ProtobufCFieldDescriptor command__command__field_descriptors[10] =
 };
 static const unsigned command__command__field_indices_by_name[] = {
   3,   /* field[3] = bool_value */
-  7,   /* field[7] = cron */
+  6,   /* field[6] = cron */
   4,   /* field[4] = data_value */
-  8,   /* field[8] = duration */
-  9,   /* field[9] = int_value */
+  7,   /* field[7] = duration */
+  8,   /* field[8] = int_value */
   0,   /* field[0] = resource_id */
   2,   /* field[2] = string_value */
-  6,   /* field[6] = trigger */
-  5,   /* field[5] = unit */
+  5,   /* field[5] = trigger */
   1,   /* field[1] = value */
 };
-static const ProtobufCIntRange command__command__number_ranges[1 + 1] =
+static const ProtobufCIntRange command__command__number_ranges[2 + 1] =
 {
   { 1, 0 },
-  { 0, 10 }
+  { 7, 5 },
+  { 0, 9 }
 };
 const ProtobufCMessageDescriptor command__command__descriptor =
 {
@@ -380,10 +368,10 @@ const ProtobufCMessageDescriptor command__command__descriptor =
   "Command__Command",
   "command",
   sizeof(Command__Command),
-  10,
+  9,
   command__command__field_descriptors,
   command__command__field_indices_by_name,
-  1,  command__command__number_ranges,
+  2,  command__command__number_ranges,
   (ProtobufCMessageInit) command__command__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

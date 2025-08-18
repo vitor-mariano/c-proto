@@ -60,7 +60,6 @@ struct  Command__Command
   char *string_value;
   protobuf_c_boolean bool_value;
   ProtobufCBinaryData data_value;
-  Telemetry__Unit unit;
   Command__Trigger *trigger;
   char *cron;
   uint32_t duration;
@@ -68,7 +67,7 @@ struct  Command__Command
 };
 #define COMMAND__COMMAND__INIT \
  { PROTOBUF_C_MESSAGE_INIT (&command__command__descriptor) \
-    , 0, 0, (char *)protobuf_c_empty_string, 0, {0,NULL}, TELEMETRY__UNIT__UNIT_UNSPECIFIED, NULL, (char *)protobuf_c_empty_string, 0, 0 }
+    , 0, 0, (char *)protobuf_c_empty_string, 0, {0,NULL}, NULL, (char *)protobuf_c_empty_string, 0, 0 }
 
 
 struct  Command__CommandPack
