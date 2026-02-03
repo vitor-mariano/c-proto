@@ -211,7 +211,7 @@ typedef enum _Telemetry__Resource {
   /*
    * Ratio (/)
    */
-  TELEMETRY__RESOURCE__RESOURCE_BRIGHTESS = 50,
+  TELEMETRY__RESOURCE__RESOURCE_BRIGHTNESS = 50,
   /*
    * Ratio (/)
    */
@@ -246,7 +246,11 @@ typedef enum _Telemetry__Resource {
    */
   TELEMETRY__RESOURCE__RESOURCE_CONDUCTIVITY = 64,
   TELEMETRY__RESOURCE__RESOURCE_PH = 65,
-  TELEMETRY__RESOURCE__RESOURCE_MESH_LEVEL = 66
+  TELEMETRY__RESOURCE__RESOURCE_MESH_LEVEL = 66,
+  /*
+   * mm
+   */
+  TELEMETRY__RESOURCE__RESOURCE_PRECIPITATION = 67
     PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(TELEMETRY__RESOURCE)
 } Telemetry__Resource;
 typedef enum _Telemetry__NetworkType {
