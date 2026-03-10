@@ -250,7 +250,11 @@ typedef enum _Telemetry__Resource {
   /*
    * mm
    */
-  TELEMETRY__RESOURCE__RESOURCE_PRECIPITATION = 67
+  TELEMETRY__RESOURCE__RESOURCE_PRECIPITATION = 67,
+  /*
+   * dBm
+   */
+  TELEMETRY__RESOURCE__RESOURCE_SIGNAL_STRENGTH = 68
     PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(TELEMETRY__RESOURCE)
 } Telemetry__Resource;
 typedef enum _Telemetry__NetworkType {
